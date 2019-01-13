@@ -7,7 +7,6 @@ namespace Actions.UnityNative {
 
         public override void ExecuteNode() {
             Debug.Log(GetInputValue<string>(nameof(Text), Text));
-            TriggerFlow();
         }
 
         public override object GetValue(NodePort port) {
