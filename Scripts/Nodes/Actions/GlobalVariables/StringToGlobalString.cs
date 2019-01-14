@@ -1,4 +1,4 @@
-﻿using LRCore;
+﻿using HalfBlind.ScriptableVariables;
 using XNode;
 
 namespace Actions.GlobalVariables {
