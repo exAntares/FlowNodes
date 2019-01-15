@@ -15,6 +15,10 @@ namespace Events.UnityNative {
             TriggerFlow();
         }
 
+        private void OnDestroy() {
+            MyButton?.onClick.RemoveListener(OnMyButtonClicked);
+        }
+
         public override object GetValue(NodePort port) {
             return null;
         }

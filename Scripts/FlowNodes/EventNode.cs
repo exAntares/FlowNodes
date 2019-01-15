@@ -3,7 +3,7 @@
         [Output] public Flow FlowOutput;
 
         public void TriggerFlow() {
-            FlowUtils.TriggerFlow(Outputs);
+            FlowUtils.TriggerFlow(Outputs, nameof(FlowNode.FlowOutput));
         }
     }
 }

@@ -10,6 +10,10 @@ namespace Events.Global {
             GameEvent?.AddListener(TriggerFlow);
         }
 
+        private void OnDestroy() {
+            GameEvent?.RemoveListener(TriggerFlow);
+        }
+
         public override object GetValue(NodePort port) {
             return null;
         }
