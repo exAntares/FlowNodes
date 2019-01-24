@@ -2,6 +2,7 @@
 using XNode;
 
 namespace Actions.UnityNative {
+    [CreateNodeMenu("GameObject/SetActive", "visible")]
     public class SetActive : FlowNode {
         public enum ActiveOptions {
             Enable,

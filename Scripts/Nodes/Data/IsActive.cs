@@ -2,6 +2,7 @@
 using XNode;
 
 namespace Data.UnityNative {
+    [CreateNodeMenu("GameObject/IsActive", "visible")]
     public class IsActive : MonoNode {
         [Input] public GameObject Target;
         [Output] public bool Output;
