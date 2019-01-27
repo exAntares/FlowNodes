@@ -16,10 +16,6 @@ namespace HalfBlind.FlowNodes {
 
         private Tweener tween;
 
-        protected override void Init() {
-            base.Init();
-        }
-
         public override void ExecuteNode() {
             StartTween(GetInputValue(nameof(TargetValue), TargetValue));
         }

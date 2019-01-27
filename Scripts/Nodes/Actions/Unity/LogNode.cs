@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using XNode;
 
-namespace Actions.UnityNative {
+namespace HalfBlind.Nodes {
+    [CreateNodeMenu("Unity/"+nameof(LogNode), "Log", "Print")]
     public class LogNode : FlowNode {
         [Input] public string Text;
 
