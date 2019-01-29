@@ -10,8 +10,8 @@ namespace Actions.UnityNative {
 
         public override void ExecuteNode() {
             var target = GetInputValue(nameof(Target), Target);
-            var text = GetInputValue(nameof(Text), Text);
-            target.text = text;
+            var text = GetInputValue<object>(nameof(Text), Text);
+            target.text = $"{text}";
         }
 
         // Return the correct value of an output port when requested
