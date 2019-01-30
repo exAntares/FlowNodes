@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using XNode;
 
-namespace Logic {
+namespace HalfBlind.Nodes {
+    [CreateNodeMenu("Math/"+nameof(CompareFloat), "float", "compare")]
     public class CompareFloat : MonoNode {
         public enum Operation {
             LessThan,
