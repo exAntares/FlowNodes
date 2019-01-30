@@ -1,7 +1,9 @@
 ﻿using HalfBlind.ScriptableVariables;
 using XNode;
 
-namespace Events.Global {
+namespace HalfBlind.Nodes {
+    [NodeWidth(300)]
+    [CreateNodeMenu("Events/"+nameof(OnGlobalEvent), "Global", "Event")]
     public class OnGlobalEvent : EventNode {
         public ScriptableGameEvent GameEvent;
 

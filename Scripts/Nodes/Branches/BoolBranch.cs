@@ -1,6 +1,8 @@
 ﻿using XNode;
 
-namespace Branch {
+namespace HalfBlind.Nodes {
+    [NodeWidth(150)]
+    [CreateNodeMenu("Branch/"+nameof(BoolBranch), "if", "bool", "branch", "switch")]
     public class BoolBranch : FlowNode {
         [Input] public bool Bool;
         [Output] public Flow FalseOutput;
