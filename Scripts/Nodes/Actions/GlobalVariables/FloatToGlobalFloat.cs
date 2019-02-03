@@ -1,13 +1,13 @@
 ﻿using HalfBlind.ScriptableVariables;
 using XNode;
 
-namespace Actions.GlobalVariables {
+namespace HalfBlind.Nodes {
+    [CreateNodeMenu("Variables/Actions/"+nameof(FloatToGlobalFloat))]
     public class FloatToGlobalFloat : FlowNode {
         [Input] public float Input;
         public GlobalFloat Target;
 
         public override void ExecuteNode() {
-            UnityEngine.Debug.Log("FloatToGlobalFloat ExecuteNode");
             Target.Value = GetInputValue<float>(nameof(Input), Input);
         }
 

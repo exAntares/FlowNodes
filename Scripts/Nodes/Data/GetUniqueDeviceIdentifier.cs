@@ -2,7 +2,7 @@ using UnityEngine;
 using XNode;
 
 namespace HalfBlind.Nodes {
-    [CreateNodeMenu(nameof(GetUniqueDeviceIdentifier), "Unique", "Identifier")]
+    [CreateNodeMenu("Utils/"+nameof(GetUniqueDeviceIdentifier), "Unique", "Identifier")]
     public class GetUniqueDeviceIdentifier : MonoNode {
         [Output] public string deviceId;
 

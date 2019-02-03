@@ -1,7 +1,8 @@
 ﻿using HalfBlind.ScriptableVariables;
 using XNode;
 
-namespace Actions.GlobalVariables {
+namespace HalfBlind.Nodes {
+    [CreateNodeMenu("Variables/"+nameof(GlobalFloatToFloat))]
     public class GlobalFloatToFloat : MonoNode {
         public GlobalFloat Input;
         [Output] public float Output;

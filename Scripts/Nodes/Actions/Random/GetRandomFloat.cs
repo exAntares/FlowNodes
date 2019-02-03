@@ -2,8 +2,8 @@
 using XNode;
 
 namespace Actions.UnityNative {
-    [CreateNodeMenu("Random/" + nameof(RandomFloat), "Random", "Float")]
-    public class RandomFloat : FlowNode {
+    [CreateNodeMenu("Random/" + nameof(GetRandomFloat), "Random", "Float")]
+    public class GetRandomFloat : FlowNode {
         [Input] public float Min;
         [Input] public float Max;
         [Output] public float Result;

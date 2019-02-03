@@ -1,8 +1,8 @@
 ﻿using UnityEngine.UI;
 using XNode;
 
-namespace Data.UnityNative {
-    [CreateNodeMenu("Variables/ButtonVar", "Button", "Variable")]
+namespace HalfBlind.Nodes {
+    [CreateNodeMenu("Variables/" + nameof(ButtonVar))]
     public class ButtonVar : MonoNode {
         public Button Value;
         [Output] public Button Output;

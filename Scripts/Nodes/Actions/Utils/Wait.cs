@@ -2,7 +2,7 @@
 using UnityEngine;
 using XNode;
 
-namespace Actions.UnityNative {
+namespace HalfBlind.Nodes {
     [CreateNodeMenu("Utils/Wait", "Wait")]
     public class Wait : FlowNode {
         [Input] public float WaitSeconds;
@@ -11,10 +11,10 @@ namespace Actions.UnityNative {
             //base.TriggerFlow();
         }
 
-        public override void ExecuteNode() {
+        public override async void ExecuteNode() {
             var secondsToWait = GetInputValue(nameof(WaitSeconds), WaitSeconds);
             if(secondsToWait > 0) {
-                DoWait((int)(secondsToWait * 1000));
+                await DoWait((int)(secondsToWait * 1000));
             }
         }
 

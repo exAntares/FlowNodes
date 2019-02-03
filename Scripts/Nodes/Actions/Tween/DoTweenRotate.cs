@@ -2,54 +2,44 @@
 using UnityEngine;
 using XNode;
 
-namespace HalfBlind.FlowNodes {
-    [CreateNodeMenu("Actions/Tween/" + nameof(DoTweenRotate), "Tween", "Rotate")]
-    public class DoTweenRotate : FlowNode {
+namespace HalfBlind.Nodes {
+    [CreateNodeMenu("Animation/Tween/" + nameof(DoTweenRotate), "Tween", "Rotate")]
+    public class DoTweenRotate : BaseDoTween {
         [Input] public GameObject Target;
         [Input] public Vector3 TargetValue;
-        [Input] public int Duration;
-        public bool IsLoop;
-        public LoopType Loop;
-        public Ease Easing;
-
-        private Tweener tween;
 
         public override void ExecuteNode() {
             StartTween(GetInputValue(nameof(TargetValue), TargetValue));
+        }
+
+        public override void TriggerFlow() {
+            //base.TriggerFlow();
         }
 
         public void StartTween(Vector3 targetValue) {
             if (tween == null) {
                 var target = GetInputValue(nameof(Target), Target);
                 var duration = GetInputValue(nameof(Duration), Duration);
-
                 tween = target.transform.DORotate(targetValue, duration);
-                tween.SetEase(Easing);
-                tween.onUpdate += OnUpdateTween;
-                tween.onComplete += OnTweenComplete;
+                SetupTween(tween);
             }
         }
 
-        private void OnTweenComplete() {
+        protected override void OnStepComplete() {
+            var target = GetInputValue(nameof(Target), Target);
+            var targetVal = GetInputValue(nameof(TargetValue), TargetValue);
+            switch (Loop) {
+                case LoopType.Incremental:
+                    tween.ChangeEndValue(target.transform.rotation.eulerAngles + targetVal);
+                    break;
+                case LoopType.Yoyo:
+                    break;
+            }
+        }
+
+        protected override void OnTweenComplete() {
+            base.TriggerFlow();
             tween = null;
-            if (IsLoop) {
-                var target = GetInputValue(nameof(Target), Target);
-                var targetVal = GetInputValue(nameof(TargetValue), TargetValue);
-                switch (Loop) {
-                    case LoopType.Incremental:
-                        StartTween(target.transform.rotation.eulerAngles + targetVal);
-                        break;
-                }
-            }
-        }
-
-        private void OnUpdateTween() {
-            TriggerFlow();
-        }
-
-        // Return the correct value of an output port when requested
-        public override object GetValue(NodePort port) {
-            return null; // Replace this
         }
     }
 }

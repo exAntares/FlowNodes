@@ -1,6 +1,7 @@
 ﻿using XNode;
 
-namespace Events.UnityNative {
+namespace HalfBlind.Nodes {
+    [CreateNodeMenu("Events/"+nameof(OnUpdate), "Update")]
     public class OnUpdate : EventNode {
         public int Milliseconds;
         private float _timestamp { get; set; }

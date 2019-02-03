@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using XNode;
 
-namespace Actions.UnityNative {
+namespace HalfBlind.Nodes {
+    [CreateNodeMenu("GameObject/"+nameof(DestroyObject))]
     public class DestroyObject : FlowNode {
         [Input] public GameObject Target;
 

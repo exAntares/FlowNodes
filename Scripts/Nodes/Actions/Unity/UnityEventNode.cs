@@ -3,7 +3,7 @@ using XNode;
 
 namespace HalfBlind.Nodes {
     [NodeWidth(400)]
-    [CreateNodeMenu("Actions/" + nameof(UnityEventNode), "Event", "Unity")]
+    [CreateNodeMenu("Events/" + nameof(UnityEventNode), "Event", "Unity")]
     public class UnityEventNode : FlowNode {
         public UnityEvent Target;
 

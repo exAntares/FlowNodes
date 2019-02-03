@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using XNode;
 
-namespace Data.UnityNative {
+namespace HalfBlind.Nodes {
+    [CreateNodeMenu("Variables/" + nameof(GameObjectVar))]
     public class GameObjectVar : MonoNode {
         public GameObject Target;
         [Output] public GameObject GoOutput;

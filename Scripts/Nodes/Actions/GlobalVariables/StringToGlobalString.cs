@@ -1,7 +1,8 @@
 ﻿using HalfBlind.ScriptableVariables;
 using XNode;
 
-namespace Actions.GlobalVariables {
+namespace HalfBlind.Nodes {
+    [CreateNodeMenu("Variables/Actions/"+nameof(StringToGlobalString))]
     public class StringToGlobalString : FlowNode {
         [Input] public string Input;
         public GlobalString Result;

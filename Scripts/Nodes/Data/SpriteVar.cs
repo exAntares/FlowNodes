@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using XNode;
 
-namespace Data.UnityNative {
+namespace HalfBlind.Nodes {
+    [CreateNodeMenu("Variables/" + nameof(SpriteVar))]
     public class SpriteVar : MonoNode {
         public Sprite Value;
         [Output] public Sprite Output;

@@ -1,7 +1,7 @@
 using XNode;
 
 namespace HalfBlind.Nodes {
-    [CreateNodeMenu(nameof(IsStringNullOrEmpty), "string", "null", "empty")]
+    [CreateNodeMenu("Variables/"+nameof(IsStringNullOrEmpty), "string", "null", "empty")]
     public class IsStringNullOrEmpty : MonoNode {
         [Input] public string inputString;
         [Output] public bool isNull;

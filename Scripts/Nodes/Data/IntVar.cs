@@ -1,6 +1,7 @@
 ﻿using XNode;
 
-namespace Data.UnityNative {
+namespace HalfBlind.Nodes {
+    [CreateNodeMenu("Variables/" + nameof(IntVar))]
     public class IntVar : MonoNode {
         public int Value;
         [Output] public int Output;

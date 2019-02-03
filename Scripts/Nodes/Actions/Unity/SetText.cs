@@ -2,8 +2,8 @@
 using UnityEngine.UI;
 using XNode;
 
-namespace Actions.UnityNative {
-    [CreateNodeMenu("UI/Actions/"+ nameof(SetText), "Set", "Text")]
+namespace HalfBlind.Nodes {
+    [CreateNodeMenu("UI/"+ nameof(SetText), "Set", "Text")]
     public class SetText : FlowNode {
         [Input] public Text Target;
         [Input] public string Text;

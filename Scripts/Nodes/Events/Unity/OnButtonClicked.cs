@@ -1,8 +1,8 @@
 ﻿using UnityEngine.UI;
 using XNode;
 
-namespace Events.UnityNative {
-    [CreateNodeMenu("UI/Events/" + nameof(OnButtonClicked), "Button", "Clicked")]
+namespace HalfBlind.Nodes {
+    [CreateNodeMenu("UI/" + nameof(OnButtonClicked), "Button", "Clicked")]
     public class OnButtonClicked : EventNode {
         [Input] public Button MyButton;
 

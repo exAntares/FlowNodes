@@ -2,8 +2,8 @@
 using UnityEngine.UI;
 using XNode;
 
-namespace Actions.UnityNative {
-    [CreateNodeMenu("UI/Actions/"+ nameof(SetImage), "Set", "Image", "Sprite")]
+namespace HalfBlind.Nodes {
+    [CreateNodeMenu("UI/"+ nameof(SetImage), "Set", "Image", "Sprite")]
     public class SetImage : FlowNode {
         [Input] public Image Target;
         [Input] public Sprite MySprite;
