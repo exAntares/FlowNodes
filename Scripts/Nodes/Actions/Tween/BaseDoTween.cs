@@ -11,13 +11,8 @@ namespace HalfBlind.Nodes {
 
         protected Tweener tween;
 
-        protected Tweener SetupTween(Tweener toSetup) {
-            toSetup.SetDelay(DelaySeconds)
-                .SetEase(Easing)
-                .SetLoops(LoopsAmount);
-            toSetup.onComplete += OnTweenComplete;
-            toSetup.onStepComplete += OnStepComplete;
-            return toSetup;
+        public override void TriggerFlow() {
+            //base.TriggerFlow();
         }
 
         // Return the correct value of an output port when requested
@@ -25,7 +20,17 @@ namespace HalfBlind.Nodes {
             return null; // Replace this
         }
 
-        protected abstract void OnTweenComplete();
-        protected abstract void OnStepComplete();
+        protected Tweener SetupTween(Tweener toSetup) {
+            toSetup.SetDelay(DelaySeconds)
+                .SetEase(Easing)
+                .SetLoops(LoopsAmount, Loop);
+            toSetup.onComplete += OnTweenComplete;
+            return toSetup;
+        }
+
+        protected void OnTweenComplete() {
+            base.TriggerFlow();
+            tween = null;
+        }
     }
 }
