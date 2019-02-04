@@ -1,7 +1,7 @@
 ﻿namespace XNode {
     public abstract class FlowNode : MonoNode {
-        [Input] public Flow FlowInput;
-        [Output] public Flow FlowOutput;
+        [Input(editorIconName: "SceneLoadOut")] public Flow FlowInput;
+        [Output(editorIconName: "SceneLoadIn")] public Flow FlowOutput;
 
         public virtual void TriggerFlow() {
             FlowUtils.TriggerFlow(Outputs, nameof(FlowOutput));
