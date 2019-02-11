@@ -2,13 +2,14 @@
 using XNode;
 
 namespace HalfBlind.Nodes {
-    [CreateNodeMenu("Variables/Actions/"+nameof(StringToGlobalString))]
+    [CreateNodeMenu("Variables/Actions/"+nameof(StringToGlobalString), "set")]
     public class StringToGlobalString : FlowNode {
         [Input] public string Input;
-        public GlobalString Result;
+        [Input] public GlobalString Target;
 
         public override void ExecuteNode() {
-            Result.Value = GetInputValue<string>(nameof(Input), Input);
+            var target = GetInputValue<GlobalString>(nameof(Target), Target);
+            target.Value = GetInputValue<string>(nameof(Input), Input);
         }
 
         public override object GetValue(NodePort port) {

@@ -7,7 +7,7 @@ namespace HalfBlind.Nodes {
         [Input] public string Text;
 
         public override void ExecuteNode() {
-            Debug.Log(GetInputValue<string>(nameof(Text), Text));
+            Debug.Log(GetInputValue<object>(nameof(Text), Text));
         }
 
         public override object GetValue(NodePort port) {

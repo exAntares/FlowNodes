@@ -2,7 +2,7 @@
 using XNode;
 
 namespace HalfBlind.Nodes {
-    [CreateNodeMenu("Variables/"+nameof(GlobalStringToString), "global", "string", "to")]
+    [CreateNodeMenu("Variables/"+nameof(GlobalStringToString), "global", "string", "to", "set")]
     public class GlobalStringToString : MonoNode {
         public GlobalString Input;
         [Output] public string Output;

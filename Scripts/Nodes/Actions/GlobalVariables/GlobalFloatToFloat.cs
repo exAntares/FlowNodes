@@ -2,14 +2,15 @@
 using XNode;
 
 namespace HalfBlind.Nodes {
-    [CreateNodeMenu("Variables/"+nameof(GlobalFloatToFloat))]
+    [CreateNodeMenu("Variables/"+nameof(GlobalFloatToFloat), "Set")]
     public class GlobalFloatToFloat : MonoNode {
-        public GlobalFloat Input;
+        [Input] public GlobalFloat Input;
         [Output] public float Output;
 
         public override object GetValue(NodePort port) {
             if(port.fieldName == nameof(Output)) {
-                return Input?.Value;
+                var input = GetInputValue<GlobalFloat>(nameof(Input), Input);
+                return input?.Value;
             }
             return null;
         }
