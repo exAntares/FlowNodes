@@ -1,0 +1,16 @@
+{
+    "name": "FlowNodes",
+    "references": [
+        "GUID:9db740f0acf078241a85bee79ffeb083",
+        "GUID:671ce7c95289af14fa69bd4bfcbbe0b8"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": []
+}

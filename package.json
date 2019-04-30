@@ -1,0 +1,12 @@
+{
+    "name": "halfblind.flownodes",
+    "displayName": "FlowNodes",
+    "version": "1.0.0",
+    "unity": "2018.1",
+    "description": "This package contains flow nodes for xNode",
+    "keywords": ["Nodes"],
+    "category": "Visual Scripting",
+    "dependencies": {
+		"halfblind.xnode": "https://github.com/exAntares/xNode.git#feature/MonoNodes"
+    }
+}
