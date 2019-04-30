@@ -7,6 +7,5 @@
     "keywords": ["Nodes"],
     "category": "Visual Scripting",
     "dependencies": {
-		"halfblind.xnode": "https://github.com/exAntares/xNode.git#feature/MonoNodes"
     }
 }
